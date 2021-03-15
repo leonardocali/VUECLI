@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba</title>
+    <style>
+        .completado{
+            text-decoration: line-through;
+            color: crimson;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="main">
+        <h1>Lista de Tareas</h1>
+        <ul>
+            <li v-bind:class="{completado: item.completado}"
+                @click="gestionTarea(item)"
+                v-for="item in tareas">
+                {{item.titulo}}
+            </li>
+        </ul>
+        <hr>
+        <pre>
+            {{tareas}}
+        </pre>
+
+    </div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="/bind_clases_atributos/main.js"></script>
+    
+    
+</body>
+</html>

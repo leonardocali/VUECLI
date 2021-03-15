@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba Vue</title>
+
+</head>
+<body>
+<div id="inicio">
+    <h1>BIENVENIDO</h1>
+<h3 v-if="conectado == true">Estais conectado</h3>
+<p v-if="edad >=18">Eres mayor de edad y puedes ingresar</p>
+<p v-else>Lo siento no te puedes conectar</p>
+<hr>
+<h2>Renderizado de Listas</h2>
+<p>{{lista}}</p>
+<ul>
+    <li v-for="item in lista">
+        {{item}}
+    </li>
+</ul>
+<hr>
+<ul>
+    <li v-for="item in listapersonas">
+    {{item.nombre}} - {{item.edad}} - {{item.ciudad}}
+    </li>
+</ul>
+<hr>
+<h2>Listado de Tareas</h2>
+<hr>
+<ul>
+    <li v-for="item in tareas">
+        {{item}}
+    </li>
+</ul>
+<hr>
+<h3>Agregar Tarea</h3>
+<input type="text" placeholder="Agregar tarea" v-model="tarea">
+<button v-on:click="agregarTarea">Agregar Tarea</button>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="/directivas/logica.js"></script>
+
+</body>
+</html>
